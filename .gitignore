@@ -1,0 +1,5 @@
+# Ignore .exe files
+*.exe
+
+# Ignore fin.ps1
+fin.ps1
