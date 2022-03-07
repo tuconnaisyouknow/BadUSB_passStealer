@@ -1,4 +1,4 @@
-# allPassStealer
+# BadUSB_passStealer
 # Warning ⚠️
 Everything in this repository is **strictly** for educational purposes. Notice **I am not responsible** for stolen data. **You are responsible** for your actions using developed script for **BadUSB**
 # About ℹ️
@@ -35,9 +35,9 @@ cd ChromePassStealer
 ```
 **Windows :** Click on green button on right top of main page. Then click on "Download Zip" and extract zip file.
 
-2. Replace your mail and password [here](https://github.com/tuconnaisyouknow/allPassStealer/blob/main/ciaoV2.ps1) at line 16, 18, 19.
+2. Replace your mail and password [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/ciaoV2.ps1) at line 16, 18, 19.
 
-3. Replace link [here](https://github.com/tuconnaisyouknow/allPassStealer/blob/main/allPassStealer.ino) at line 85.
+3. Replace link [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) at line 85.
 
 4. Add your code in the **BadUSB** by **Arduino software**.
 
