@@ -57,7 +57,7 @@ cd ChromePassStealer
 
 5. Now put this link in the [BadUSB_passStealer.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) file;
 ## Github
-1. Create a Github account;
+1. Create a Github account [here](https://github.com/signup);
 
 2. Create a public repository;
 
