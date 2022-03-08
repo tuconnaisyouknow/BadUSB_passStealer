@@ -16,6 +16,17 @@ Keyboard.press(173);
 Keyboard.releaseAll(); 
 ```
 This is only to write these characters : "@", "\\". But it depends on the computer's layout, so adapt these characters thanks to this [site](https://www.csee.umbc.edu/portal/help/theory/ascii.txt) and the sequence you actually use to wirte these characters with your keyboard. (or switch the keyboard layout to French).
+### US Layout
+For US layout you only have to replace by this for "\\" :
+```
+Keyboard.press(92);
+Keyboard.releaseAll();
+```
+And by this for "@" :
+```
+Keyboard.press(64);
+Keyboard.releaseAll();
+```
 ### NB n°2
 You can customize the **delay** according to the speed in which you plug the **BadUSB**.
 # Getting Started ✔️
