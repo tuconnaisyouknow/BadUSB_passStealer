@@ -41,8 +41,8 @@ You can customize the **delay** according to the speed in which you plug the **B
 
 **Linux :**
 ```
-git clone https://github.com/tuconnaisyouknow/allPassStealer
-cd ChromePassStealer
+git clone https://github.com/tuconnaisyouknow/BadUSB_passStealer
+cd BadUSB_passStealer
 ```
 **Windows :** Click on green button on right top of main page. Then click on "Download Zip" and extract zip file.
 
