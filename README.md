@@ -36,6 +36,8 @@ You can customize the **delay** according to the speed in which you plug the **B
 2. Install **Arduino software** [here](https://www.arduino.cc/en/software) (if you use a BadUSB which is based on arduino);
 
 3. Have a **Gmail** account and enable **less secure app** [here](https://www.google.com/settings/security/lesssecureapps);
+
+4. Have a victim with **Windows OS** installed in his PC;
 ## Install
 1. Download this repository;
 
