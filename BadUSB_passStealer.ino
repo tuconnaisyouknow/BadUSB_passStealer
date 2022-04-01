@@ -104,6 +104,8 @@ void setup()
 
   typeKey(KEY_RETURN);
   
+  // Make the capslock to know when you can unplug the BadUSB
+  
   Keyboard.write(KEY_CAPS_LOCK);
 
   delay(150);
