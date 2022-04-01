@@ -29,6 +29,8 @@ Keyboard.releaseAll();
 ```
 ### NB n°2
 You can customize the **delay** according to the speed in which you plug the **BadUSB**.
+### NB n°3
+When you plug the BadUSB in a PC you  have to wait for the caps lock to flash to unplug it.
 # Getting Started ✔️
 ## Requirments
 1. Have a **BadUSB**.
