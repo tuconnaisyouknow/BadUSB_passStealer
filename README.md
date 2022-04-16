@@ -91,7 +91,7 @@ cd BadUSB_passStealer
 4. Put the link you got in the [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt)
 # Nirsoft tools 🧰
 You can download nirsoft tools below if you want :
-* [WebBrowserPassView.exe](https://www.nirsoft.net/protected_downloads/passreccommandline.zip) (User : download ; Password : nirsoft123!);
+* [WebBrowserPassView.exe](https://www.nirsoft.net/protected_downloads/passreccommandline.zip) (User : download ; Password : nirsoft123!;
 * [WNetWatcher.exe](https://www.nirsoft.net/utils/wireless_network_watcher.html);
 * [BrowsingHistoryView.exe](https://www.nirsoft.net/utils/browsing_history_view.html);
 * [WirelessKeyView.exe](https://www.nirsoft.net/utils/wireless_key.html);
