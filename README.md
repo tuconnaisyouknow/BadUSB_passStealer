@@ -78,9 +78,9 @@ Use this token to access the HTTP API:
 API_ACESS_TOKEN
 For a description of the Bot API, see this page: https://core.telegram.org/bots/api
 
-7. Now begin a conversation with your bot by clicking on the t.me/BOT_USERNAME link in @BotFather's response and click Start. Now your bot will appear in your chat list;
+7. Now begin a conversation with your bot by clicking on the t.me/BOT_USERNAME link in @BotFather's  and click Start. Now your bot will appear in your chat list;
 ## Get a Telegram API access token
-Your Telegram API access token is the @BotFather's response !
+Your Telegram API access token is in the @BotFather's response !
 ## Get your Telegram chat ID
 1. Paste the following link in your browser. Replace API_ACCESS_TOKEN with the API access token that you identified or created in the previous section :
 ```
