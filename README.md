@@ -8,7 +8,7 @@ This **script** allows you to steal the following **information** :
 * Browser **history** from the last 7 days;
 * The list of all **devices** that are **connected to victim's network**;
 ### Pay attention Arduino users !
-I stopped upgrading .ino scripts, if you want you can convert Ducky Scripts [here](https://d4n5h.github.io/Duckuino/)
+I stopped upgrading .ino scripts, if you want you can convert Ducky Scripts [here](https://d4n5h.github.io/Duckuino/).
 ### NB n°1 (for arduino BadUSB)
 Sometimes, you will see something like this : 
 ``` 
@@ -95,7 +95,7 @@ https://api.telegram.org/bot<API-access-token>/getUpdates?offset=0
 ```
 "message":{"message_id":2,"from":{"id":123456789,"is_bot":false,"first_name":"user","language_code":"en"},"chat":{"id":123456789,"first_name":"user","type":"private"},"date":1696077493,"text":"Hi"}}]}
 ```
-## Install for Rubber Ducky Malduino W and Arduino BadUSB
+## Install for Rubber Ducky, Malduino W and Arduino BadUSB
 1. Download this repository;
 
 **Linux :**
