@@ -123,8 +123,8 @@ pyinstaller --onefile -w telegram_uploader.py
 
 8. Find a victim and enjoy !
 ## Install for Malduino 2 BadUSB (with mass storage)
-###**NB** : You can upgrade firmware also on Malduino 1 !
-###**NB 2** : MMS = Malduino Mass Storage
+### **NB** : You can upgrade firmware also on Malduino 1 !
+### **NB 2** : MMS = Malduino Mass Storage
 1. Download this repository;
 
 **Linux :**
