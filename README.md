@@ -64,7 +64,7 @@ python get-pip.py
 ## Create a telegram bot
 1. Open you browser and go to this [link](https://web.telegram.org/) and login;
 
-2. Search for the @BotFather username in your Telegram application;
+2. Search for the @BotFather username in your Telegram search bar;
 
 3. Click Start to begin a conversation with @BotFather
 
