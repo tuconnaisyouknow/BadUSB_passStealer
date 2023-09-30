@@ -72,15 +72,15 @@ python get-pip.py
 
 5. Then send your bot’s name to @BotFather.;
 
-6. Then send your bot’s username to @BotFather. BotFather will respond :
+6. Then send your bot’s username to @BotFather. @BotFather will respond :
 > Done! Congratulations on your new bot. You will find it at t.me/BOT_USERNAME. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you’ve finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this. 
 Use this token to access the HTTP API:
 API_ACESS_TOKEN
 For a description of the Bot API, see this page: https://core.telegram.org/bots/api
 
-7. Now begin a conversation with your bot by clicking on the t.me/BOT_USERNAME link in BotFather's response and click Start. Now your bot will appear in your chat list;
+7. Now begin a conversation with your bot by clicking on the t.me/BOT_USERNAME link in @BotFather's response and click Start. Now your bot will appear in your chat list;
 ## Get a Telegram API access token
-Your Telegram API access token is the BotFather's response !
+Your Telegram API access token is the @BotFather's response !
 ## Get your Telegram chat ID
 1. Paste the following link in your browser. Replace API_ACCESS_TOKEN with the API access token that you identified or created in the previous section :
 ```
