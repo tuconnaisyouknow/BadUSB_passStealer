@@ -143,7 +143,7 @@ cd BadUSB_passStealer
 
 4. In your MMS root directory, crate the following 2 directory : dump/ and passStealer/;
 
-5. Replace TOKEN and CHAT_ID with your personal Telegram token and chat_id [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/telegram_uploader.py) at line 6 and 7;
+5. Replace TOKEN and CHAT_ID with your personal Telegram token and chat_id [here](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/telegram_uploader.py) at line 7 and 8;
 
 6. Convert telegram_uploader.py in exe file with this command :
 ```
