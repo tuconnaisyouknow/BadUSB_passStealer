@@ -6,7 +6,7 @@ from os import path
 
 token = "TOKEN"
 tg_id = "CHAT_ID"
- 
+
 # Initialize parser
 parser = argparse.ArgumentParser()
 parser.add_argument("-f", "--file", required=True, help = "File to upload")
