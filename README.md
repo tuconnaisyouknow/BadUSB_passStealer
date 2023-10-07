@@ -8,7 +8,7 @@ This **script** allows you to steal the following **information** :
 * Browser **history** from the last 7 days;
 * The list of all **devices** that are **connected to victim's network**;
 ### Pay attention Arduino users !
-I stopped upgrading .ino scripts, if you want you can convert Ducky Scripts [here](https://d4n5h.github.io/Duckuino/).
+I stopped upgrading .ino scripts, if you want you can convert Ducky Scripts [here](https://duckify.huhn.me/).
 ### NB n°1 (for arduino BadUSB)
 Sometimes, you will see something like this : 
 ``` 
