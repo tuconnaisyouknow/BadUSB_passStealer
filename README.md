@@ -10,10 +10,13 @@ This **script** allows you to steal the following **information**:
 * Browser **history** from the last 7 days
 * A **list** of all **devices** connected to the victim's network
 
-### Attention Arduino users!
+### Attention Malduino users! ⚠️
+You have to replace `CTRL-SHIFT ENTER` by `CTRL SHIFT ENTER` in [ps.ps1](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/ps.ps1).
+
+### Attention Arduino users! ⚠️
 I stopped upgrading .ino scripts. If you want, you can convert Ducky Scripts [here](https://duckify.huhn.me/).
 
-### NB #1 (for Arduino BadUSB)
+### NB #1 (for Arduino BadUSB) 🚨
 Sometimes, you will see something like this:
 ```cpp
 Keyboard.press(KEY_LEFT_CTRL);
@@ -36,10 +39,10 @@ Keyboard.press(64);
 Keyboard.releaseAll();
 ```
 
-### NB #2
+### NB #2 🚨
 You can customize the **delay** according to how fast you plug in the **BadUSB**.
 
-### NB #3
+### NB #3 🚨
 When you plug the BadUSB into a PC, you must wait for the Caps Lock to flash before unplugging it.
 
 # Getting Started ✔️
@@ -104,44 +107,6 @@ Your Telegram API access token is provided in **@BotFather**'s response.
 5. Place the or `.txt` file in your **BadUSB**.
 
 6. Find a victim and enjoy!
-
-# Installation for Malduino 2 BadUSB (with mass storage)
-### **Warning** ⚠️: This version is deprecated and will no longer be updated!
-
-1. Download this repository.
-
-    * **Linux:**
-      ```
-      git clone https://github.com/tuconnaisyouknow/BadUSB_passStealer
-      cd BadUSB_passStealer
-      ```
-    
-    * **Windows:** Click the green button at the top right of the main page, then click "Download Zip" and extract the zip file.
-
-2. Upgrade the Malduino firmware following these [instructions](https://docs.maltronics.com/devices/malduino-2/firmware-upgrade).
-
-3. Modify `preferences.json` in your MMS by setting:
-    ```
-    "enable_msc": true,
-    ```
-
-4. In your MMS root directory, create the following directories: `dump/` and `passStealer/`.
-
-5. Replace **TOKEN** and **CHAT_ID** in [telegram_uploader.py](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/telegram_uploader.py).
-
-6. Convert `telegram_uploader.py` into an executable:
-    ```
-    pip install pyinstaller
-    pyinstaller --onefile -w telegram_uploader.py
-    ```
-
-7. Download 7-Zip Extra: standalone console version, 7z DLL, Plugin for Far Manager [here](https://www.7-zip.org/download.html).
-
-8. Copy the necessary files into your MMS directories as specified in the repository.
-
-9. Find a victim and enjoy!
-
-**Explanation:** Nirsoft Tools are encrypted to avoid antivirus detection, so we use 7-Zip to extract them via command line. The `dump` folder stores all stolen information.
 
 # Nirsoft tools 🧰
 You can download Nirsoft tools here:
