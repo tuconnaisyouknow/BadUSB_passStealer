@@ -13,7 +13,7 @@ This **script** allows you to steal the following **information**:
 ## 🔑 Key Information for Users  
 
 ### ⚠️ MalDuino & Rubber Ducky Users  
-You **must** replace **`CTRL-SHIFT ENTER`** with **`CTRL SHIFT ENTER`** in the [`ps.ps1`](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/ps.ps1) file.  
+You **must** replace **`CTRL-SHIFT ENTER`** with **`CTRL SHIFT ENTER`** in the [`BadUSB_passStealer.txt`](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt) file.  
 
 ✅ **Flipper Zero users**, no changes are needed—this syntax is already compatible.  
 
@@ -87,11 +87,11 @@ Your **API token** is provided in **@BotFather**'s response.
    - Click the **green "Code" button** at the top right.  
    - Click **"Download ZIP"** and extract it.  
 
-2️⃣ Replace **`<TOKEN>`** and **`<CHAT_ID>`** in [`ps.ps1`](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/ps.ps1).  
+2️⃣ Replace **`<TOKEN>`** and **`<CHATID>`** in [`ps.ps1`](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/ps.ps1).  
 
 3️⃣ **Upload `ps.ps1` to get a downloadable link**.  
 
-4️⃣ Replace **`LINK`** in [`BadUSB_passStealer_upload.txt`](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/upload/BadUSB_passStealer_upload.txt) with the `ps.ps1` link.  
+4️⃣ Replace **`LINK`** in [`BadUSB_passStealer.txt`](https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/BadUSB_passStealer.txt) with the `ps.ps1` link.  
 
 5️⃣ Place the `.txt` file in your **BadUSB**.  
 
