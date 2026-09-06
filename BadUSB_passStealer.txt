@@ -41,6 +41,8 @@ LEFT
 DELAY 500
 ENTER
 
+DELAY 500
+
 REM Minimize all active windows
 GUI d
 DELAY 500
