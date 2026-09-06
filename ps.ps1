@@ -30,7 +30,6 @@ Set-ItemProperty `
   -Name "VerifiedAndReputablePolicyState" `
   -Type DWord `
   -Value 0
-
 CiTool --refresh --json
 
 # Download necessary tools
@@ -104,13 +103,14 @@ $fileStream.Dispose()
 
 Set-Location C:\Users\Public\Documents
 Remove-Item -Recurse -Force scripts
+Remove-Item "C:\Users\Public\Documents\ps.ps1"
 Remove-MpPreference -ExclusionPath "C:\Users\Public\Documents\scripts" -Force
+Remove-MpPreference -ExclusionPath "C:\Users\Public\Documents" -Force
 Set-ItemProperty `
   -Path "HKLM:\SYSTEM\CurrentControlSet\Control\CI\Policy" `
   -Name "VerifiedAndReputablePolicyState" `
   -Type DWord `
   -Value 1
-
 CiTool --refresh --json
 
 # Caps Lock signal
